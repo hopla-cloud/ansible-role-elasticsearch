@@ -12,9 +12,6 @@
     state: restarted
     name: ssh
 
-- name: restart apache
-  service: name=apache2 state=restarted
-
 - name: Log variables to file
   template:
     src: logs.j2
@@ -42,5 +39,10 @@
     IPv6: {{ ansible_default_ipv6.address }}<br>
     Utilisateur: root<br>
     Mot de passe: {{ root_password }} <br>
+    </p>
+    <p>
+    Utilisateur API<br>
+    Utilisateur : admin<br>
+    Password : {{ es_users.file.es_admin.password }}<br>
     </p>
     '
