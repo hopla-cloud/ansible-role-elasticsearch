@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    user_name: ubuntu
+    es_enable_xpack: true
+    es_heap_size: "256m"
+    es_instance_name: "node1"
+  remote_user: root
+  pre_tasks:
+  roles:
+    - hoplacloud.elasticsearch
